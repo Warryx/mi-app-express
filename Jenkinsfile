@@ -1,8 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18'
+        }
+    }
 
     environment {
-        NODE_VERSION = '18' // Cambia esto si usas otra versión de Node.js
+        NODE_ENV = 'development' // Esta linea cambio porque no estaba node instalado
     }
 
     stages {
